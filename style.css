@@ -1,0 +1,80 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+    margin: 16px;
+  }
+  
+  select {
+    padding: 4px;
+  }
+/*  */
+div {
+  margin: 5px;
+}
+
+/*  */
+  
+  .kved-page-wrapper {
+  margin-bottom: 10px;
+  }
+
+  .kved-page-wrapper-trigger {
+    background-color: #323636; 
+    color: #fff; 
+    padding: 10px;
+    font-weight: 200;
+    font-size: 22px;
+    margin: 10px;
+  }
+  .kved-page-wrapper-content {
+    /* border: 1px solid black; */
+    margin: 10px;
+    display: none;
+
+  }
+
+  .kved-page-wrapper-content-second-step {
+    display: none;
+
+  }
+
+  .kved-page-wrapper-content-second-step-content{
+    display: none;
+
+  }
+
+  .kved-page-wrapper-content-second-step-trigger,
+  .kved-page-wrapper-content-third-step-trigger,
+  .kved-page-wrapper-content-fourth-step-trigger{
+    display: flex;
+    align-items: baseline;
+  }
+
+  .kved-page-wrapper-content-second-step-trigger > span{
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .kved-page-wrapper-content-third-step-content{
+    display: none;
+  }
+  .kved-page-wrapper-content-third-step-trigger > span{
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+
+  .kved-page-wrapper-content-fourth-step-content{
+    display: none;
+  }
+
+  .kved-page-wrapper-content-fourth-step-trigger > span{
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .content-third-floor{
+    font-size: 12px;
+  }
