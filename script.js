@@ -52,11 +52,11 @@
 
 
 
-$(document).ready(function() {
-  $('.kved-page-wrapper-trigger').click(function() {
-    $(this).next('.kved-page-wrapper-content').toggle()
-  })
-})
+// $(document).ready(function() {
+//   $('.kved-page-wrapper-trigger').click(function() {
+//     $(this).next('.kved-page-wrapper-content').toggle()
+//   })
+// })
 
 $(document).ready(function() {
   $('.kved-page-wrapper-content-second-step-trigger').click(function() {
