@@ -1,11 +1,11 @@
 body {
-  font-family: 'Montserrat', sans-serif;
-    margin: 16px;
-  }
-  
-  select {
-    padding: 4px;
-  }
+  font-family: "Montserrat", sans-serif;
+  margin: 16px;
+}
+
+select {
+  padding: 4px;
+}
 /*  */
 div {
   margin: 5px;
@@ -16,11 +16,9 @@ li > p {
 
 /*  */
 
-.header-search-container{
+.header-search-container {
   display: flex;
   justify-content: flex-end;
-
-
 }
 
 .header-search-close-button {
@@ -30,92 +28,73 @@ li > p {
 }
 
 .header-search-cross-icon {
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    font-size: 16px;
-    line-height: 1;
-    color: #333; 
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  line-height: 1;
+  color: #333;
+}
 
-
-
-  
-  .kved-page-wrapper {
+.kved-page-wrapper {
   margin-bottom: 10px;
-  }
+}
 
-  .kved-page-wrapper-trigger {
-    cursor: pointer;
-    background-color: #323636; 
-    color: #fff; 
-    padding: 10px;
-    font-weight: 200;
-    font-size: 22px;
-    margin: 10px;
-  }
-  .kved-page-wrapper-content {
-    /* border: 1px solid black; */
-    margin: 10px;
+.kved-page-wrapper-trigger {
+  cursor: pointer;
+  background-color: #323636;
+  color: #fff;
+  padding: 10px;
+  font-weight: 200;
+  font-size: 22px;
+  margin: 10px;
+}
+.kved-page-wrapper-content {
+  /* border: 1px solid black; */
+  margin: 10px;
+}
 
-  }
+/* .kved-page-wrapper-content-second-step-content,
+.kved-page-wrapper-content-third-step-content {
+  display: none;
+} */
 
-  .kved-page-wrapper-content-second-step {
-    display: none;
+.kved-page-wrapper-content-first-step-trigger,
+.kved-page-wrapper-content-second-step-trigger,
+.kved-page-wrapper-content-third-step-trigger{
+  cursor: pointer;
+  display: flex;
+  align-items: baseline;
+}
+.kved-page-wrapper-content-first-step-trigger > span {
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
 
-  }
+.kved-page-wrapper-content-second-step-trigger > span {
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
 
-  .kved-page-wrapper-content-second-step-content{
-    display: none;
+.kved-page-wrapper-content-third-step-trigger > span {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
 
-  }
+.content-third-floor {
+  font-size: 12px;
+}
 
-  .kved-page-wrapper-content-second-step-trigger,
-  .kved-page-wrapper-content-third-step-trigger,
-  .kved-page-wrapper-content-fourth-step-trigger{
-    cursor: pointer;
-    display: flex;
-    align-items: baseline;
-  }
+/*  */
+.mystyle-invisible {
+  display: none;
+}
 
-  .kved-page-wrapper-content-second-step-trigger > span{
-    margin-right: 10px;
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  .kved-page-wrapper-content-third-step-content{
-    display: none;
-  }
-  .kved-page-wrapper-content-third-step-trigger > span{
-    margin-right: 10px;
-    font-size: 16px;
-    font-weight: 600;
-  }
-
-
-  .kved-page-wrapper-content-fourth-step-content{
-    display: none;
-  }
-
-  .kved-page-wrapper-content-fourth-step-trigger > span{
-    margin-right: 10px;
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .content-third-floor{
-    font-size: 12px;
-  }
-
-  /*  */
-  .mystyle-invisible{
-    display: none;
-  }
-
-  .mystyle-visible{
-    display: block;
-  }
+.mystyle-visible {
+  display: block;
+}
