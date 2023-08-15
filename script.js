@@ -1,82 +1,88 @@
+$(document).ready(function () {
+  $(".kved-page-wrapper-content-second-step-trigger").click(function () {
+    $(this).next(".kved-page-wrapper-content-second-step-content").toggle();
+  });
+});
+
+$(document).ready(function () {
+  $(".kved-page-wrapper-content-third-step-trigger").click(function () {
+    $(this).next(".kved-page-wrapper-content-third-step-content").toggle();
+  });
+});
+
+$(document).ready(function () {
+  $(".kved-page-wrapper-content-fourth-step-trigger").click(function () {
+    $(this).next(".kved-page-wrapper-content-fourth-step-content").toggle();
+  });
+});
 
 
 
-// // const onButtonClick = () => {
-// //   console.log('qweqw');
-
-// // }
-// const info = document.querySelector('.info')
-// const section = document.querySelector('.section')
 
 
-// // const a1 = document.getElementById("a1");
-// // const a11 = document.getElementById("a11");
+const input = document.querySelector('input');
+const button = document.querySelector(".header-search-button");
+const closBtn = document.querySelector(".header-search-close-button")
+const section = document.querySelectorAll(".kved-container");
+const sectionParent = document.querySelectorAll(
+  ".kved-page-wrapper-content-second-step-trigger"
+);
+const qweqwe = document.querySelectorAll(
+  ".kved-page-wrapper-content-second-step-content"
+);
 
-// // const b1 = document.getElementById("b1");
-// // const b2 = document.getElementById("b2");
 
 
-// a11.hidden = false;
+button.addEventListener("click", function (event) {
+  event.preventDefault();
+  const searchValue = input.value;
+  searchParams(searchValue);
+});
 
-// b11.hidden = false;
+closBtn.addEventListener("click", function() {
+  input.value = ''
+  cliarSearchValue() 
+});
 
-// function isHidden() {
-//   a11.hidden = !a11.hidden;
-// }
 
-// function isHid() {
-//   console.log('qweqw');
+
+function searchParams(searchValue) {
   
-//   b11.hidden = !b11.hidden;
-// }
+  const search = [...section].find((item) => item.id === searchValue);
 
+  if (search) {
+    section.forEach(item => {item.classList.add('mystyle-invisible')})
+    sectionParent.forEach(item => {item.classList.add('mystyle-invisible')})
 
-// info.addEventListener('click', function(event) {
+    const childElements = search.children;
+    const parentElement = search.parentNode.parentNode;
+    
+    search.classList.add("mystyle-visible");
+    parentElement.classList.add("mystyle-visible");
+    for (let i = 0; i < childElements.length; i++) {
+      childElements[i].classList.add("mystyle-visible");
+    }
+  } else {
+    alert("Данный Квед не найден");
+  }
+}
 
-// if(event.target.closest('.a1')) {
-//   isHidden()
-// }
-// })
+function cliarSearchValue()  {
+  console.log('Cliar');
+  
+  section.forEach(item => {item.classList.remove('mystyle-invisible', 'mystyle-visible')})
+  sectionParent.forEach(item => {item.classList.remove('mystyle-invisible')})
+  qweqwe.forEach(item => {item.classList.remove('mystyle-visible')})
 
-// section.addEventListener('click', function(event) {
+}
 
-//   if(event.target.closest('.b1')) {
-//     isHid()
-//   }
-//   })
-
-// // b1.addEventListener('click', function() {
-// //   b2.hidden = !b2.hidden;
-// // })
-
-
-
-
-// $(document).ready(function() {
-//   $('.kved-page-wrapper-trigger').click(function() {
-//     $(this).next('.kved-page-wrapper-content').toggle()
-//   })
-// })
-
-$(document).ready(function() {
-  $('.kved-page-wrapper-content-second-step-trigger').click(function() {
-    $(this).next('.kved-page-wrapper-content-second-step-content').toggle()
-  })
+input.addEventListener('input', event => {
+  console.log(event.target.value);
+  if(event.target.value.length === 0) {
+    cliarSearchValue() 
+  }
+  
 })
-
-
-$(document).ready(function() {
-  $('.kved-page-wrapper-content-third-step-trigger').click(function() {
-    $(this).next('.kved-page-wrapper-content-third-step-content').toggle()
-  })
-})
-
-$(document).ready(function() {
-  $('.kved-page-wrapper-content-fourth-step-trigger').click(function() {
-    $(this).next('.kved-page-wrapper-content-fourth-step-content').toggle()
-  })
-})
-
 
 
 

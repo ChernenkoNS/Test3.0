@@ -15,12 +15,41 @@ li > p {
 }
 
 /*  */
+
+.header-search-container{
+  display: flex;
+  justify-content: flex-end;
+
+
+}
+
+.header-search-close-button {
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+
+.header-search-cross-icon {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 1;
+    color: #333; 
+  }
+
+
+
   
   .kved-page-wrapper {
   margin-bottom: 10px;
   }
 
   .kved-page-wrapper-trigger {
+    cursor: pointer;
     background-color: #323636; 
     color: #fff; 
     padding: 10px;
@@ -47,6 +76,7 @@ li > p {
   .kved-page-wrapper-content-second-step-trigger,
   .kved-page-wrapper-content-third-step-trigger,
   .kved-page-wrapper-content-fourth-step-trigger{
+    cursor: pointer;
     display: flex;
     align-items: baseline;
   }
@@ -79,4 +109,13 @@ li > p {
 
   .content-third-floor{
     font-size: 12px;
+  }
+
+  /*  */
+  .mystyle-invisible{
+    display: none;
+  }
+
+  .mystyle-visible{
+    display: block;
   }
