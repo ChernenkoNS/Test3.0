@@ -6,15 +6,14 @@ body {
 select {
   padding: 4px;
 }
-/*  */
+/* Test */
 div {
   margin: 5px;
 }
 li > p {
   margin: 0;
 }
-
-/*  */
+/* Test */
 
 .header-search-container {
   display: flex;
@@ -52,14 +51,9 @@ li > p {
   margin: 10px;
 }
 .kved-page-wrapper-content {
-  /* border: 1px solid black; */
   margin: 10px;
 }
 
-/* .kved-page-wrapper-content-second-step-content,
-.kved-page-wrapper-content-third-step-content {
-  display: none;
-} */
 
 .kved-page-wrapper-content-first-step-trigger,
 .kved-page-wrapper-content-second-step-trigger,
