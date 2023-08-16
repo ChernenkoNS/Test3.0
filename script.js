@@ -38,7 +38,6 @@ window.onload = function () {
 };
 ///////////////////////
 
-////////////////Events///////////////
 button.addEventListener("click", function (event) {
   event.preventDefault();
   const searchValue = input.value;
@@ -47,39 +46,68 @@ button.addEventListener("click", function (event) {
 
 cancelBtn.addEventListener("click", function () {
   input.value = "";
-  cliarSearchValue();
+  clearSearchValue();
 });
 
 input.addEventListener("input", (event) => {
   const searchParams = event.target.value;
   if (searchParams.length === 0) {
-    cliarSearchValue();
-    
+    clearSearchValue();
+    clearTimeout(timeoutId);
+  } else {
+    debounceSearch(searchParams);
   }
-
- 
 });
 
-// input.addEventListener("input",
-//   _.debounce(() => {
-//     console.log('qweqw');
-//   }, 3000) )
 
-////////////////////////////////////////////
+
+
+let timeoutId
+
+const debounce = (func, waitTime) => {
+  return (...arg) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func(arg[arg.length - 1]);
+    }, waitTime);
+  };
+};
+
+const debounceSearch = debounce(searchByKvedText, 3000);
+
 
 function searchByKvedText(searchParams) {
-  console.log('qqqqqqq');
-  
   const kvedTitles = document.querySelectorAll(".kved-page-wrapper-title");
-
   const kvedTitle = [...kvedTitles].filter((title) => {
     return title.textContent
       .toLocaleLowerCase()
       .includes(searchParams.toLocaleLowerCase());
   });
+
+
   console.log(kvedTitle);
-  
+
+  section.forEach((item) => {
+    item.classList.add("mystyle-invisible");
+  });
+  sectionParent.forEach((item) => {
+    item.classList.add("mystyle-invisible");
+  });
+
+
+for (let i = 0; i < kvedTitle.length; i++) {
+  kvedTitle[i].parentNode.parentNode.parentNode.parentNode.classList.replace("mystyle-invisible", "mystyle-visible")
+  kvedTitle[i].parentNode.parentNode.parentNode.classList.replace("mystyle-invisible", "mystyle-visible")
+  kvedTitle[i].parentNode.parentNode.classList.replace("mystyle-invisible", "mystyle-visible")
+  kvedTitle[i].parentNode.classList.replace("mystyle-invisible", "mystyle-visible")
+
 }
+
+}
+
+
+
+
 
 function searchByKvedNumber(searchValue) {
   const search = [...section].find((item) => item.id === searchValue);
@@ -104,7 +132,7 @@ function searchByKvedNumber(searchValue) {
   }
 }
 
-function cliarSearchValue() {
+function clearSearchValue() {
   console.log("Cliar");
 
   for (let i = 0; i < section.length; i++) {
