@@ -26,6 +26,7 @@ const sectionParent = document.querySelectorAll(
 const kwedSection = document.querySelectorAll(
   ".kved-page-wrapper-content-second-step-content"
 );
+const kvedChapter = document.querySelectorAll(".kved-page-wrapper-chapter");
 
 ////// ??? Добавлени класса для поиска ///////
 
@@ -62,7 +63,6 @@ input.addEventListener("input", (event) => {
 });
 /////////////////////////////////////////////
 
-
 ///////////////// debounce //////////////////
 let timeoutId;
 
@@ -86,30 +86,43 @@ function searchByKvedTitle(searchParams) {
       .includes(searchParams.toLocaleLowerCase());
   });
 
-  section.forEach((item) => {
-    item.classList.add("mystyle-invisible");
-  });
-  sectionParent.forEach((item) => {
-    item.classList.add("mystyle-invisible");
-  });
+  if (kvedTitle.length !== 0) {
+    section.forEach((item) => {
+      item.classList.add("mystyle-invisible");
+    });
+    sectionParent.forEach((item) => {
+      item.classList.add("mystyle-invisible");
+    });
+    kvedChapter.forEach((item) => {
+      item.classList.add("mystyle-invisible");
+    });
 
-  for (let i = 0; i < kvedTitle.length; i++) {
-    kvedTitle[i].parentNode.parentNode.parentNode.parentNode.classList.replace(
-      "mystyle-invisible",
-      "mystyle-visible"
-    );
-    kvedTitle[i].parentNode.parentNode.parentNode.classList.replace(
-      "mystyle-invisible",
-      "mystyle-visible"
-    );
-    kvedTitle[i].parentNode.parentNode.classList.replace(
-      "mystyle-invisible",
-      "mystyle-visible"
-    );
-    kvedTitle[i].parentNode.classList.replace(
-      "mystyle-invisible",
-      "mystyle-visible"
-    );
+    for (let i = 0; i < kvedTitle.length; i++) {
+      const item = kvedTitle[i].closest(".kved-page-wrapper-chapter").children;
+
+      for (let i = 0; i < item.length; i++) {
+        item[i].classList.replace("mystyle-invisible", "mystyle-visible");
+      }
+      
+      
+      kvedTitle[i]
+        .closest(".kved-page-wrapper-chapter")
+        .classList.replace("mystyle-invisible", "mystyle-visible");
+      kvedTitle[i]
+        .closest(".kved-page-wrapper-content-second-step-content")
+        .classList.replace("mystyle-invisible", "mystyle-visible");
+      kvedTitle[i]
+        .closest(".content-second-floor")
+        .classList.replace("mystyle-invisible", "mystyle-visible");
+      kvedTitle[i]
+        .closest(".kved-container")
+        .classList.replace("mystyle-invisible", "mystyle-visible");
+      kvedTitle[i]
+        .closest(".kved-page-wrapper-content-third-step-content")
+        .classList.replace("mystyle-invisible", "mystyle-visible");
+    }
+  } else {
+    alert("Збіги не знайдені");
   }
 }
 
@@ -118,7 +131,6 @@ function searchByKvedNumber(searchValue) {
   const search = [...section].find((item) => item.id === searchValue);
   if (search) {
     const childElements = search.children;
-    const parentElement = search.parentNode.parentNode;
 
     section.forEach((item) => {
       item.classList.add("mystyle-invisible");
@@ -128,11 +140,14 @@ function searchByKvedNumber(searchValue) {
     });
 
     search.classList.add("mystyle-visible");
-    parentElement.classList.replace("mystyle-invisible", "mystyle-visible");
+    search
+      .closest(".kved-page-wrapper-content-second-step-content")
+      .classList.replace("mystyle-invisible", "mystyle-visible");
     childElements[1].classList.replace("mystyle-invisible", "mystyle-visible");
     childElements[0].classList.add("mystyle-invisible");
   } else {
-    alert("Данный Квед не найден");
+    clearTimeout(timeoutId)
+    alert("Цей Квед не знайдено");
   }
 }
 
@@ -151,7 +166,9 @@ function clearSearchParams() {
       item[0].classList.remove("mystyle-invisible");
     }
   }
-
+  kvedChapter.forEach((item) => {
+    item.classList.remove("mystyle-invisible", "mystyle-visible");
+  });
   section.forEach((item) => {
     item.classList.remove("mystyle-invisible", "mystyle-visible");
   });

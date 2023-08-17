@@ -59,7 +59,7 @@ li > p {
 .kved-page-wrapper-content-second-step-trigger,
 .kved-page-wrapper-content-third-step-trigger{
   cursor: pointer;
-  display: flex;
+  display: flex !important;
   align-items: baseline;
 }
 .kved-page-wrapper-content-first-step-trigger > span {
@@ -90,5 +90,5 @@ li > p {
 }
 
 .mystyle-visible {
-  display: block;
+  display: inherit;
 }
